@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./",
+      "esModuleInterop": true,
+      "rootDir": "src",
+      "jsx": "react",
+      "lib": ["dom", "es2017"],
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "resolveJsonModule": true,
+      "sourceMap": true,
+      "target": "es6"
+    },
+    "include": ["src/**/*.ts"]
+}
