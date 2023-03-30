@@ -1,7 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 
-import { getProducts, getProductsById, searchForProducts } from './product';
+import { getProducts, getProductById, searchForProducts } from './product';
 
 async function start() {
     const app = express();
@@ -27,7 +27,7 @@ async function start() {
     });
     app.get('/products/:productId', async (req: express.Request, res: express.Response) => {
         console.log('Hitting Big Star product service - get by product id');
-        const data = await getProductsById(+req.params.productId);
+        const data = await getProductById(+req.params.productId);
         return res.status(200).send({
             product: data,
         });

@@ -18,15 +18,15 @@ export async function getProducts(): Promise<Product[]> {
         type: product.product_type,
         price: product.price,
     }));
-    console.log({products});
+   // console.log({products});
     return products;
 }
 
-export async function getProductsById(id: number): Promise<Product[]> {
+export async function getProductById(id: number): Promise<Product> {
     const url = `https://bigstarcollectibles.com/api/products/${id}`;
     console.log({url});
     const data = (await axios.get(url)).data;
-    console.log({data});
+    //console.log({data});
     const products:  Product[] = data.map(product => ({
         id: +product.id,
         productId: +product.product_id,
@@ -36,8 +36,8 @@ export async function getProductsById(id: number): Promise<Product[]> {
         type: product.product_type,
         price: product.price,
     }));
-    console.log({products});
-    return products;
+    //console.log({products});
+    return products[0];
 }
     
 export async function searchForProducts(searchStr: string, quantity?: number, sortDirection?: SortOrder ): Promise<Product[]> {
@@ -61,6 +61,6 @@ export async function searchForProducts(searchStr: string, quantity?: number, so
         type: product.product_type,
         price: product.price,
     }));
-    console.log({products});
+   // console.log({products});
     return products;
   }
